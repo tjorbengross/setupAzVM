@@ -17,4 +17,5 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io
 wget https://vstsagentpackage.azureedge.net/agent/2.200.2/vsts-agent-linux-x64-2.200.2.tar.gz
 mkdir myagent && cd myagent
 tar zxvf ../vsts-agent-linux-x64-2.200.2.tar.gz
-sudo chmod 666 /var/run/docker.sock
+sudo groupadd docker
+sudo usermod -aG docker ${USER}
